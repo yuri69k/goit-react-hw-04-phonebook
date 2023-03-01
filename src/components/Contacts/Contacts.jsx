@@ -14,7 +14,7 @@ const Contacts = ({ contacts, filter, filteredContacts, deleteContact }) => {
           <button
             type="button"
             className={styles.buttons}
-            onClick={e => deleteContact(e)}
+            onClick={() => deleteContact(id)}
             aria-label="delete contact button"
           >
             <TiUserDeleteOutline size={20} />
