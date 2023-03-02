@@ -12,6 +12,7 @@ const App = () => {
   const [contacts, setContacts] = useLocalStorage('contacts', []);
   const [filter, setFilter] = useState('');
 
+
   const addContact =   ({ name, number }) => {
     contacts.some(contact => contact.name === name)
       ? Notiflix.Notify.info(`${name} is already in contacts.`)
