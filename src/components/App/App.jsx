@@ -1,4 +1,4 @@
-import { useState,useMemo } from 'react';
+import { useState } from 'react';
 import useLocalStorage from 'Hooks/useLocalStorage';
 import styles from './styles.module.css';
 import { BsJournalBookmark } from 'react-icons/bs';
