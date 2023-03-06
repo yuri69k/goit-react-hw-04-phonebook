@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useMemo } from 'react';
 import useLocalStorage from 'Hooks/useLocalStorage';
 import styles from './styles.module.css';
 import { BsJournalBookmark } from 'react-icons/bs';
@@ -31,11 +31,10 @@ const App = () => {
     setFilter(value);
   };
 
-  const filteredContacts = () => {
+  const filteredContacts =  useMemo(() => {
     return [...contacts.filter(contact =>
-      contact.name.toLowerCase().includes(filter.toLowerCase())
-    ),];
-  };
+      contact.name.toLowerCase().includes(filter.toLowerCase())),];
+  },[contacts,filter]);
 
   const deleteContact = id => {
     setContacts(contacts.filter(contact => contact.id !== id));
